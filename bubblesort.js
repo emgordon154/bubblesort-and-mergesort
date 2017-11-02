@@ -1,21 +1,35 @@
-Array.prototype.swap = function(i,j) {
+Array.prototype.swap = function (i, j) {
   let temp = this[i];
   this[i] = this[j];
   this[j] = temp
 }
 
-Array.prototype.compare = function(i,j) {
-  if (this[i] > this[j]) Array.prototype.swap(i,j)
-  else return
+Array.prototype.compare = function (i, j) {
+  if (this[i] > this[j]) {
+    this.swap(i, j);
+    return false
+  } else if (this[i] === this[j]) {
+    return true
+  } else if (this[i] < this[j]) {
+    return true
+  }
 }
 
 function bubbleSort(arr) {
   if (!arr.length) return []
-  let sortedArr = arr.slice();
-  for (let i = 0; i < arr.length-1; i++) {
-    sortedArr.compare(i,i+1)
+  else if (arr.length === 1) return arr
+  else {
+    let sortedArr = arr.slice();
+    let notFinished = false
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (sortedArr.compare(i, i + 1) == false) notFinished = true
+    }
+    if (notFinished) {
+      return bubbleSort(sortedArr.slice(0,-1)).concat(sortedArr[sortedArr.length-1])
+    } else {
+      return sortedArr
+    }
   }
-  return sortedArr
 }
 
 /*

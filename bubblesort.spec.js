@@ -28,28 +28,28 @@ describe('Bubble Sort', function(){
 
   it('sorts a larger array', function() {
     let randomArray = [];
-    let randomLength = 5 + Math.round(Math.random()*100);
+    let randomLength = Math.round(Math.random()*10);
     for (let i=0; i < randomLength; i++) {
-      randomArray.push(Math.round(Math.random()*1000))
+      randomArray.push(Math.round(Math.random()*100))
     }
-    expect( bubbleSort( randomArray )).toEqual( randomArray.sort() )
+    expect( bubbleSort( randomArray )).toEqual( randomArray.sort((a,b)=>a-b) )
   })
 
   it('sorts another larger array', function() {
     let randomArray = [];
-    let randomLength = 5 + Math.round(Math.random()*100);
+    let randomLength = Math.round(Math.random()*10);
     for (let i=0; i < randomLength; i++) {
-      randomArray.push(Math.round(Math.random()*1000))
+      randomArray.push(Math.round(Math.random()*100))
     }
-    expect( bubbleSort( randomArray )).toEqual( randomArray.sort() )
+    expect( bubbleSort( randomArray )).toEqual( randomArray.sort((a,b)=>a-b) )
   })
 
   it('sorts yet another larger array', function() {
     let randomArray = [];
-    let randomLength = 5 + Math.round(Math.random()*100);
+    let randomLength = Math.round(Math.random()*10);
     for (let i=0; i < randomLength; i++) {
-      randomArray.push(Math.round(Math.random()*1000))
+      randomArray.push(Math.round(Math.random()*100))
     }
-    expect( bubbleSort( randomArray )).toEqual( randomArray.sort() )
+    expect( bubbleSort( randomArray )).toEqual( randomArray.sort((a,b)=>a-b) )
   })
 });
